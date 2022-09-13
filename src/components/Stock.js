@@ -1,12 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 
-function Stock() {
+function Stock({stock, onAction}) {
+  const {name, price, id, bought} = stock
+
+
   return (
-    <div>
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">{"Compant Name"}</h5>
-          <p className="card-text">{"Stock Price"}</p>
+    <div value={bought} onClick={onAction}>
+      <div className="card" >
+        <div className="card-body" id={id}>
+          <h5 className="card-title" id={id}>{name}</h5>
+          <p className="card-text" id={id}>{price}</p>
         </div>
       </div>
     </div>
